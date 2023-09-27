@@ -1,0 +1,27 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  background-color: lightgray;
+}
+
+main#main-login {
+  background: url("../../public/images/background.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+main#main-login > form {
+  padding: 15px 52px;
+  border-radius: 15px;
+  background-color: #000000a8;
+  color: white;
+}
+
+main#main-login > form > input {
+  margin: 10px 0;
+}
