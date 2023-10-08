@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Social;
 use App\Entity\User;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -41,10 +42,15 @@ class DashboardController extends AbstractDashboardController
             ->setFaviconPath('images/favicon-32x32.png');
     }
 
+    // public function configureAssets(): Assets
+    // {
+    //     return parent::configureAssets()->addWebpackEncoreEntry('admin');
+    // }
+
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-list', User::class)->setPermission('ROLE_ADMIN');
-        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-list', Social::class)->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Utilisateurs', 'fa fa-list', User::class)->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Réseaux', 'fa fa-share-nodes', Social::class)->setPermission('ROLE_ADMIN');
     }
 }
