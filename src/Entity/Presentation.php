@@ -3,15 +3,15 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
-use App\Repository\VideoRepository;
+use App\Repository\PresentationRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
-#[ORM\Entity(repositoryClass: VideoRepository::class)]
+#[ORM\Entity(repositoryClass: PresentationRepository::class)]
 #[ApiResource]
 #[Vich\Uploadable]
-class Video
+class Presentation
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -21,11 +21,11 @@ class Video
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
-    #[Vich\UploadableField(mapping: "videos", fileNameProperty: "videoName")]
-    private ?File $videoFile = null;
+    #[Vich\UploadableField(mapping: "videos", fileNameProperty: "presentationName")]
+    private ?File $presentationFile = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $videoName = null;
+    private ?string $presentationName = null;
 
     #[ORM\Column(length: 255)]
     private ?string $description = null;
@@ -54,26 +54,26 @@ class Video
      * must be able to accept an instance of 'File' as the bundle will inject one here
      * during Doctrine hydration.
      *
-     * @param File|\\Symfony\\Component\\HttpFoundation\\File\\UploadedFile|null $videoFile
+     * @param File|\\Symfony\\Component\\HttpFoundation\\File\\UploadedFile|null $presentationFile
      */
-    public function setVideoFile(?File $videoFile = null): void
+    public function setPresentationFile(?File $presentationFile = null): void
     {
-        $this->videoFile = $videoFile;
+        $this->presentationFile = $presentationFile;
     }
 
-    public function getVideoFile(): ?File
+    public function getPresentationFile(): ?File
     {
-        return $this->videoFile;
+        return $this->presentationFile;
     }
 
-    public function setVideoName(?string $videoName): void
+    public function setPresentationName(?string $presentationName): void
     {
-        $this->videoName = $videoName;
+        $this->presentationName = $presentationName;
     }
 
-    public function getVideoName(): ?string
+    public function getPresentationName(): ?string
     {
-        return $this->videoName;
+        return $this->presentationName;
     }
 
     public function getDescription(): ?string

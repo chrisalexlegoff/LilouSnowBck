@@ -2,24 +2,24 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Video;
+use App\Entity\Presentation;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Vich\UploaderBundle\Form\Type\VichFileType;
 
-class VideoCrudController extends AbstractCrudController
+class PresentationCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Video::class;
+        return Presentation::class;
     }
 
-    public function configureFields(string $video): iterable
+    public function configureFields(string $presentation): iterable
     {
         return [
             TextField::new('nom'),
             TextField::new('description'),
-            TextField::new('videoFile', 'Upload')
+            TextField::new('presentationFile', 'Upload')
                 ->setFormType(VichFileType::class)
                 ->onlyOnForms(),
         ];
