@@ -2,10 +2,11 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Collaborateur;
 use App\Entity\Question;
 use App\Entity\Social;
 use App\Entity\User;
-use App\Entity\Video;
+use App\Entity\Presentation;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -54,6 +55,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Utilisateurs', 'fa fa-list', User::class)->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Réseaux', 'fa fa-share-nodes', Social::class)->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Questions', 'fa fa-question', Question::class)->setPermission('ROLE_ADMIN');
-        yield MenuItem::linkToCrud('Videos', 'fa fa-video', Video::class)->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Presentation', 'fa fa-video', Presentation::class)->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Collaborateurs', 'fa fa-user', Collaborateur::class)->setPermission('ROLE_ADMIN');
     }
 }
