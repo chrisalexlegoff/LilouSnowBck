@@ -2,11 +2,13 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Category;
 use App\Entity\Collaborateur;
 use App\Entity\Question;
 use App\Entity\Social;
 use App\Entity\User;
 use App\Entity\Presentation;
+use App\Entity\Temoignage;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -57,5 +59,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Questions', 'fa fa-question', Question::class)->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Presentation', 'fa fa-video', Presentation::class)->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Collaborateurs', 'fa fa-user', Collaborateur::class)->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Temoignages', 'fa fa-gear', Temoignage::class)->setPermission('ROLE_ADMIN');
     }
 }
