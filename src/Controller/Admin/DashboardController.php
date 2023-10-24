@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\AvantApres;
 use App\Entity\Category;
 use App\Entity\Collaborateur;
 use App\Entity\Question;
@@ -60,5 +61,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Presentation', 'fa fa-video', Presentation::class)->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Collaborateurs', 'fa fa-user', Collaborateur::class)->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Temoignages', 'fa fa-gear', Temoignage::class)->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Avant - après', 'fa fa-image', AvantApres::class)->setPermission('ROLE_ADMIN');
     }
 }
