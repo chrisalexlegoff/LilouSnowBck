@@ -55,7 +55,7 @@ class Question
 
     public function isEnable(): ?bool
     {
-        return $this->enable;
+        return $this->enable = true;
     }
 
     public function setEnable(bool $enable): static

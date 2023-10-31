@@ -7,7 +7,6 @@ use App\Enum\SocialSlug;
 use App\Enum\SocialType;
 use App\Repository\SocialRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: SocialRepository::class)]
 #[ApiResource]
