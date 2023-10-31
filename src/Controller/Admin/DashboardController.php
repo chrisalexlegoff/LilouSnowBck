@@ -3,12 +3,12 @@
 namespace App\Controller\Admin;
 
 use App\Entity\AvantApres;
-use App\Entity\Category;
 use App\Entity\Collaborateur;
 use App\Entity\Question;
 use App\Entity\Social;
 use App\Entity\User;
 use App\Entity\Presentation;
+use App\Entity\Tarif;
 use App\Entity\Temoignage;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -62,5 +62,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Collaborateurs', 'fa fa-user', Collaborateur::class)->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Temoignages', 'fa fa-gear', Temoignage::class)->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Avant - après', 'fa fa-image', AvantApres::class)->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Tarif - méthode', 'fa fa-barcode', Tarif::class)->setPermission('ROLE_ADMIN');
     }
 }
