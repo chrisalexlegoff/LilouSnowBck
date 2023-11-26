@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Collaborateur;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Vich\UploaderBundle\Form\Type\VichImageType;
@@ -22,7 +23,7 @@ class CollaborateurCrudController extends AbstractCrudController
             TextField::new('nom'),
             TextField::new('fonction'),
             TextField::new('lieu'),
-            TextField::new('email'),
+            EmailField::new('email'),
             TextField::new('description'),
             TextField::new('descriptionDeux'),
             TextField::new('descriptionTrois'),
