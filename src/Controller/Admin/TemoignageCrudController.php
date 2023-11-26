@@ -6,6 +6,7 @@ use App\Entity\Temoignage;
 use App\Enum\CategorySlug;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Vich\UploaderBundle\Form\Type\VichFileType;
 
@@ -22,6 +23,7 @@ class TemoignageCrudController extends AbstractCrudController
             TextField::new('nom'),
             ChoiceField::new('categorie')->setChoices(CategorySlug::cases()),
             TextField::new('description'),
+            EmailField::new('link'),
             TextField::new('temoignageFile', 'Upload')
                 ->setFormType(VichFileType::class)
                 ->onlyOnForms(),

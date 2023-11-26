@@ -7,7 +7,7 @@ use App\Enum\SocialSlug;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
 
 class SocialCrudController extends AbstractCrudController
 {
@@ -21,7 +21,7 @@ class SocialCrudController extends AbstractCrudController
         return [
             yield IdField::new('id')->hideOnForm(),
             yield ChoiceField::new('slug')->setChoices(SocialSlug::cases()),
-            yield TextField::new('link'),
+            yield UrlField::new('link'),
         ];
     }
 }
