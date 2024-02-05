@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
-use App\Enum\SocialSlug;
-use App\Enum\SocialType;
 use App\Repository\SocialRepository;
 use Doctrine\ORM\Mapping as ORM;
 

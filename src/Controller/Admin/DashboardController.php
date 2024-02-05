@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\AvantApres;
+use App\Entity\Avis;
 use App\Entity\Collaborateur;
 use App\Entity\Methode;
 use App\Entity\Question;
@@ -67,5 +68,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Tarifs', 'fa fa-barcode', Tarif::class)->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Méthodes', 'fa fa-microchip', Methode::class)->setPermission('ROLE_ADMIN');
         yield MenuItem::linkToCrud('Réalisations', 'fa-brands fa-r-project', Realisation::class)->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToCrud('Avis', 'fa-regular fa-comment', Avis::class)->setPermission('ROLE_ADMIN');
     }
 }
