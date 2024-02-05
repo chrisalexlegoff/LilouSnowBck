@@ -35,7 +35,6 @@ class Collaborateur
     #[Assert\Email(
         message: "Cet email {{ value }} n'est pas un email valide.",
     )]
-
     private ?string $email = null;
 
     #[ORM\Column(length: 255)]
@@ -147,18 +146,6 @@ class Collaborateur
         $this->photoName = $photoName;
     }
 
-    public function isEnable(): ?bool
-    {
-        return $this->enable = true;
-    }
-
-    public function setEnable(bool $enable): static
-    {
-        $this->enable = $enable;
-
-        return $this;
-    }
-
     public function getDescriptionDeux(): ?string
     {
         return $this->descriptionDeux;
@@ -179,6 +166,30 @@ class Collaborateur
     public function setDescriptionTrois(string $descriptionTrois): static
     {
         $this->descriptionTrois = $descriptionTrois;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of enable
+     *
+     * @return ?bool
+     */
+    public function getEnable(): ?bool
+    {
+        return $this->enable;
+    }
+
+    /**
+     * Set the value of enable
+     *
+     * @param ?bool $enable
+     *
+     * @return self
+     */
+    public function setEnable(?bool $enable): self
+    {
+        $this->enable = $enable;
 
         return $this;
     }

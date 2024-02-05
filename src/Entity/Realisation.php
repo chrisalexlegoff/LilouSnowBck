@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\RealisationRepository;
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -53,7 +52,7 @@ class Realisation
         return $this->imageFile;
     }
 
-    #[ORM\Column(type: Types::SIMPLE_ARRAY)]
+    #[ORM\Column]
     private array $introduction = [];
 
     #[ORM\Column(length: 255)]
