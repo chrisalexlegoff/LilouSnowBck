@@ -4,10 +4,9 @@ namespace App\Enum;
 
 enum CategorySlug: string
 {
-    case Mastectomie = 'mastectomie';
-    case Abdominoplastie = 'abdominoplastie';
+    case MastectomieOrnementale = 'mastectomie-ornementale';
+    case MastectomieTetons = 'mastectomie-tetons';
     case Cicatrices = 'cicatrices';
-    case Vitiligo = 'vitiligo';
-    case GrandsBrules = 'grands brûlés';
+    case GrandsBrules = 'grands-brules';
     case Tricopigmentation = 'tricopigmentation';
 }
